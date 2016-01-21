@@ -1,3 +1,5 @@
-# the-long-dark-map
+# The Long Dark Map
 
-Current tiles for Mystery Lake available at `https://dl.dropboxusercontent.com/u/10994537/mystery/{z}/{x}/{y}.png`
+A work in progress web map of the various area available to play in [The Long Dark](http://intothelongdark.com/).
+
+![](map.png)
