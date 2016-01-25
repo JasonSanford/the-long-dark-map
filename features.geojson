@@ -1,83 +1,70 @@
 {
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Ice Fishing Hut"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.014033317565917969,
-          0.0038194656343748757
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Ice Fishing Hut"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.0116729736328125,
-          0.0026714801778581817
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Ice Fishing Hut"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.012488365173339844,
-          0.0017380714413795927
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Ice Fishing Hut"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.013647079467773438,
-          0.0020277500148432005
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Camp Office"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.009130239486694336,
-          0.003948211666804849
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Trapper's Homestead"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.0004076957702636719,
-          0.00019311904907751644
-        ]
-      }
-    }
-  ]
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+
+"features": [
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Prepper Cache" }, "geometry": { "type": "Point", "coordinates": [ 0.011823283513809, 0.014170843700804 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "building", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.008269147870151, 0.011180583914735 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "building", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.008286072325597, 0.011359488347319 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "building", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.008006818810738, 0.011223180208206 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "building", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.007972969899846, 0.01142764241685 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Forestry Outlook" }, "geometry": { "type": "Point", "coordinates": [ 0.003999953983901, 0.009146610893941 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "building", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.001078369862537, 0.005998744772681 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "building", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.014727943179727, 0.007549249874543 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "building", "name": "Ice Fishing Hut" }, "geometry": { "type": "Point", "coordinates": [ 0.012493915060856, 0.001775322202653 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "building", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.004981305048993, 0.002375840234587 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "building", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.001283252122727, 0.000456738049466 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "building", "name": "Ice Fishing Hut" }, "geometry": { "type": "Point", "coordinates": [ 0.01166614206309, 0.002695461970728 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "building", "name": "Ice Fishing Hut" }, "geometry": { "type": "Point", "coordinates": [ 0.013644614004483, 0.002037013758877 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "building", "name": "Ice Fishing Hut" }, "geometry": { "type": "Point", "coordinates": [ 0.014031587855278, 0.003838143970795 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Lake Cabins" }, "geometry": { "type": "Point", "coordinates": [ 0.015001747650231, 0.000744809142388 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Lone Lake Cabin" }, "geometry": { "type": "Point", "coordinates": [ 0.015088953025058, 0.002673513697019 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "River (Southern Access)" }, "geometry": { "type": "Point", "coordinates": [ 0.01263357669008, 0.003869694614256 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Ice Fishing Huts" }, "geometry": { "type": "Point", "coordinates": [ 0.012448265268572, 0.002190651675002 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Mystery Lake" }, "geometry": { "type": "Point", "coordinates": [ 0.010660555084614, 0.003074069692395 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Mystery Lake (Western Access)" }, "geometry": { "type": "Point", "coordinates": [ 0.011761522941808, 0.000300356599023 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Dave's Quiet Clearing" }, "geometry": { "type": "Point", "coordinates": [ 0.008585339680523, 0.000286638927927 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Prepper Cache" }, "geometry": { "type": "Point", "coordinates": [ 0.010411202215968, -0.000569343748203 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Tunnel Collapse" }, "geometry": { "type": "Point", "coordinates": [ 0.006756751977115, -0.001068666975903 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Max's Last Stand" }, "geometry": { "type": "Point", "coordinates": [ 0.003194957449017, -0.000492524790084 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Trapper's Homestead" }, "geometry": { "type": "Point", "coordinates": [ 0.000407110622509, 0.000207076435616 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Deadfall Area" }, "geometry": { "type": "Point", "coordinates": [ 0.004725139260438, 0.002015065485131 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Lake Trail" }, "geometry": { "type": "Point", "coordinates": [ 0.009049980818274, 0.002454030959757 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Prepper Cache" }, "geometry": { "type": "Point", "coordinates": [ 0.00674448872128, 0.003894386422156 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Camp Office" }, "geometry": { "type": "Point", "coordinates": [ 0.009131735857175, 0.003982179516913 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Prepper Cache" }, "geometry": { "type": "Point", "coordinates": [ 0.014674727494629, 0.005772335587842 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Train Loading Area" }, "geometry": { "type": "Point", "coordinates": [ 0.012185286560109, 0.011157893197074 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Derailment" }, "geometry": { "type": "Point", "coordinates": [ 0.009010465882806, 0.008670879465971 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Trailers" }, "geometry": { "type": "Point", "coordinates": [ 0.007561399793638, 0.010927510441509 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Prepper Cache" }, "geometry": { "type": "Point", "coordinates": [ -0.000597113771985, 0.005482892729204 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Cabin" }, "geometry": { "type": "Point", "coordinates": [ 0.000584246540127, 0.008496665045085 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Frozen Creek" }, "geometry": { "type": "Point", "coordinates": [ 0.004492137399571, 0.007498018599456 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Unnamed Pond" }, "geometry": { "type": "Point", "coordinates": [ 0.001963181529582, 0.00678469970827 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Prepper Cache" }, "geometry": { "type": "Point", "coordinates": [ 0.000007873515879, 0.011252545125776 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Lookout" }, "geometry": { "type": "Point", "coordinates": [ 0.000520205092988, 0.014303355099456 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Prepper Cache" }, "geometry": { "type": "Point", "coordinates": [ -0.000563049172443, 0.015137389473965 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Prepper Cache" }, "geometry": { "type": "Point", "coordinates": [ -0.000688406898757, 0.014325303372503 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Clear Cut" }, "geometry": { "type": "Point", "coordinates": [ 0.003118652746043, 0.011016601187514 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Logging Camp" }, "geometry": { "type": "Point", "coordinates": [ 0.00836323849151, 0.011900019187949 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Carter Hydro Dam" }, "geometry": { "type": "Point", "coordinates": [ 0.015152994472197, 0.01272445120128 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "River (Northern Access)" }, "geometry": { "type": "Point", "coordinates": [ 0.013419787647506, 0.010175707964136 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Train Bridge" }, "geometry": { "type": "Point", "coordinates": [ 0.014308192403558, 0.011278608700333 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "start", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.000818156360055, -0.000088265646814 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "start", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.00962310430583, 0.003613352299978 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "start", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.008683797028578, 0.00014388413085 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "start", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.004213625233906, 0.003215076948918 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "start", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.007807956459248, 0.002184246627777 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "start", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.012826057498984, 0.005408786099468 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "start", "name": null }, "geometry": { "type": "Point", "coordinates": [ -0.000586573441962, 0.00437795578096 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "start", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.00504503910769, 0.008215881874104 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "area", "name": "Prepper Cache" }, "geometry": { "type": "Point", "coordinates": [ 0.011734430122717, 0.009451174394206 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "start", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.013714591409898, 0.007602495241964 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "start", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.015237792400037, 0.011670441289418 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "start", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.00705058707804, 0.010188090274795 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "start", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.003934371719047, 0.015048327334684 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "cave", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.013367640073255, 0.007664259868174 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "cave", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.014687747598042, 0.004482316701709 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "cave", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.008362232375104, 0.00041437059969 ] } },
+{ "type": "Feature", "properties": { "id": null, "type": "cave", "name": null }, "geometry": { "type": "Point", "coordinates": [ 0.002417517399701, 0.000831814283921 ] } }
+]
 }

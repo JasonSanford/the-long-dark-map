@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding:0;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.map .marker {
+  border-radius: 7px;
+  background-color: #ffffff;
+  border: 1px solid #46461f;
+}
+
+.map .marker i {
+  margin-left: 4px;
+  margin-top: 5px;
+}
+
+.map .marker i.play {
+  margin-left: 6px;
+}
+
+.map .marker i.home {
+  margin-left: 3px;
+}
