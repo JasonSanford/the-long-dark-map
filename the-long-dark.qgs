@@ -6,7 +6,7 @@
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="paths20160121105123229" name="paths">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="inaccessible20160120111622015" name="inaccessible">
+        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="inaccessible20160120111622015" name="inaccessible">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="pois20160121163044088" name="pois">
@@ -29,10 +29,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-250.87320044888201664</xmin>
-            <ymin>1178.58681360199375376</ymin>
-            <xmax>812.65708431351470153</xmax>
-            <ymax>1774.87970133857220389</ymax>
+            <xmin>855.18957345971580253</xmin>
+            <ymin>-102.55207563716840014</ymin>
+            <xmax>1768.37756714060242302</xmax>
+            <ymax>446.92320953393544869</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -75,8 +75,8 @@
                 <legendlayerfile isInOverview="0" layerid="paths20160121105123229" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="inaccessible" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="inaccessible" showFeatureCount="0">
+            <filegroup open="false" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="inaccessible20160120111622015" visible="0"/>
             </filegroup>
         </legendlayer>
@@ -591,8 +591,6 @@
                         </layer>
                     </symbol>
                 </source-symbol>
-                <colorramp type="randomcolors" name="[source]"/>
-                <invertedcolorramp value="0"/>
                 <rotation/>
                 <sizescale scalemethod="area"/>
             </renderer-v2>
@@ -764,10 +762,10 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
@@ -1012,10 +1010,10 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
