@@ -8,13 +8,15 @@ var map = new mapboxgl.Map({
   style: 'mapbox://styles/jcsanford/cijna760h00id93ly3eqhr7ah',
   center: initialPosition,
   zoom: initialZoom - 3,
-  minZoom: 14,
+  minZoom: 12,
   maxZoom: 18
 });
 
-setTimeout(function () {
-  map.zoomTo(initialZoom)
-}, 1000);
+setTimeout(goToFullView, 1000);
+
+function goToFullView() {
+  map.fitBounds([[-0.001343, -0.001976], [0.016241, 0.015520]]);
+}
 
 function locationHovered(event) {
   var $section = $(event.target).closest('.location');
@@ -44,10 +46,7 @@ function locationClicked(event) {
     $section.removeClass('selected').find('.location-detail').hide();
     map.setPaintProperty(layer, 'text-color', '#000');
     map.setPaintProperty(layer, 'text-halo-color', '#fff');
-    map.flyTo({
-      center: initialPosition,
-      zoom: initialZoom
-    });
+    goToFullView();
   } else {
     $section.siblings('.location').each(function (i, o) {
       $(o).removeClass('selected').find('.location-detail').hide();
