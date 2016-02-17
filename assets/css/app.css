@@ -49,9 +49,17 @@ html, body {
   font-weight: lighter;
 }
 
-.list-container .top {
+.list-container .top, .list-container .attribution {
   background-color: #000;
   padding: 10px;
+}
+
+.list-container .attribution {
+  font-size: 0.9em;
+}
+
+.list-container .attribution a {
+  color: #fff;
 }
 
 .list-container .locations {

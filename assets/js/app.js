@@ -57,7 +57,7 @@ function locationClicked(event) {
     map.setPaintProperty(layer, 'text-color', '#818e86');
     map.setPaintProperty(layer, 'text-halo-color', '#31393a');
     map.flyTo({
-      center: [$section.data('y'), $section.data('x')],
+      center: [parseFloat($section.data('y')), parseFloat($section.data('x'))],
       zoom: 16
     });
   }
