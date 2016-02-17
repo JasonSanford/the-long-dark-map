@@ -10,12 +10,111 @@
 
     <link href='//api.tiles.mapbox.com/mapbox-gl-js/v0.12.4/mapbox-gl.css' rel='stylesheet' />
     <link href='assets/css/app.css' rel='stylesheet' />
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300' rel='stylesheet' type='text/css'>
 
   </head>
 
   <body>
+    <div class='wrapper'>
+      <div class='list-container'>
+        <div class='top'>
+          <img src='assets/img/logo.jpg' class='logo' />
 
-    <div id='map' class='map'></div>
+          <h1>Mystery Lake</h1>
+
+          <p>
+            Mystery Lake is one of the primary regions in The Long Dark and the first available for play in the Sandbox. The region is named after Mystery Lake, a lake that feeds into Carter Hydro Dam. A railway crosses the region and is mainly used in the summers supporting the local timber operation and lakeside recreation.
+          </p>
+
+          <p>
+            Ideal for new players. A balance between wilderness and man-made shelters, resources, and wildlife.
+          </p>
+        </div>
+
+        <div class='locations'>
+          <h2>Key Locations</h2>
+
+          <div class='location' data-layer='Camp Office' data-x='0.003999953983901' data-y='0.009146610893941'>
+            <h3>Camp Office</h3>
+            <p class='location-brief'>
+              Camp Office is a two-storey cabin located on the western side of Mystery Lake.
+            </p>
+            <div class='location-detail'>
+              <p>
+                The Camp Office is a good source of materials and other resources for the player to collect.
+              </p>
+              <p>
+                The Camp Office has two entrances (front and back) and two floors. The first floor features a work bench and a potbelly stove. The second floor features a wood burning stove, bunk beds, dresser, cupboard and a table.
+              </p>
+              <p>
+                Due to a wolf spawn located between the railroad tracks and the Camp Office, be wary of using this location as a safe house as it may cause a drain on your ammunition and/or items used to distract a wolf. On the other hand, this is a good location to farm a wolf as the office provides both quick shelter and a work bench. A wolf should spawn every 2-3 in-game days.
+              </p>
+            </div>
+          </div>
+
+          <div class='location' data-layer='Forestry Outlook' data-x='0.009131735857175' data-y='0.003982179516913'>
+            <h3>Forestry Outlook</h3>
+            <p class='location-brief'>
+              Forestry Lookout is a tall, wooden structure found in Mystery Lake.
+            </p>
+            <div class='location-detail'>
+              <p>
+                The forestry lookout sits on a small hill to the north-east of the Unnamed Pond and south of clear cut.
+              </p>
+              <p>
+                It is difficult to access. It contains bunk beds, wood stove, a radio, food, and a hunting rifle spawn. There is a frozen corpse outside.
+              </p>
+              <p>
+                The interior is warm enough to keep you from freezing even during a blizzard. The lookout is reached from clear cut by following the sign up the mountain trail.
+              </p>
+              <p>
+                The forestry lookout does not make an ideal base, it is especially cold when exiting due to the high altitude. This means by the time you reach the bottom of the path you may be cold already. There is a wood stove inside to warm you and cook food The long trek down the mountain and back up again means any trip is time consuming. There are only 5 or so nearby buildings to be searched, so if you have searched these a very long trek must be made to gain additional supplies. Wolves patrol the clear cut area, this can be a drain on flares or ammunition as you can't simply turn around and hide in the house if the wolf is in aggression range. Both the Camp Office and the Trapper's Homestead make more adequate bases.
+              </p>
+            </div>
+          </div>
+
+          <div class='location' data-layer='Derailment' data-x='0.009010465882806' data-y='0.008670879465971'>
+            <h3>Derailment</h3>
+            <p class='location-brief'>
+              Derailment is a small train wreck in Mystery Lake.
+            </p>
+            <div class='location-detail'>
+              <p>
+                Derailment consists of a small train wreck near the center of the Mystery Lake region. Up to two wolves may be encountered around the train wreck. Inside of the train car, there is: a corpse, a metal container, a back pack, and on rare instances a .303 hunting rifle.
+              </p>
+            </div>
+          </div>
+
+          <div class='location' data-layer="Trapper's Homestead" data-x='0.000407110622509' data-y='0.000207076435616'>
+            <h3>Trapper's Homestead</h3>
+            <p class='location-brief'>
+              Trapper's Homestead is a location in the south-western corner of Mystery Lake.
+            </p>
+            <div class='location-detail'>
+              <p>
+                Trapper's Homestead is accessible from a path to the east and a difficult path to the north-east. Valuable supplies may be scavenged from the Trapper' Homestead, including a hunting rifle along with ammunition.
+              </p>
+              <p>
+                An open patch of ice and snow surrounds Trapper's Homestead, sometimes abundant with deer and rabbits. Adjacent to the Trapper's Homestead is a small abandoned barn and due further south is Max's Last Stand.
+              </p>
+              <p>
+                The interior of Trapper's Homestead is filled with valuable supplies. It contains a bed, a wood stove, a workbench, and many containers.
+              </p>
+              <p>
+                Outside the Homestead lies an abandoned barn and some birch saplings.
+              </p>
+              <p>
+                The Trapper's Homestead can serve as a good safehouse due to the many storage containers, stove and working bench. The Homestead is a very warm building, a fire will not always be required to warm you up. Unfortunately it lies far away from many of the other buildings in Mystery Lake. The raised path to the door can give you some time to either shoot an approaching wolf or return indoors.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div id='map' class='map'></div>
+
+    </div>
 
     <script src='//api.tiles.mapbox.com/mapbox-gl-js/v0.12.4/mapbox-gl.js'></script>
     <script src='//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js'></script>
