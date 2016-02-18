@@ -30,7 +30,7 @@ function locationHovered(event) {
   });
 
   if (event.type === 'mouseenter') {
-    map.setPaintProperty(layer, 'text-color', '#818e86');
+    map.setPaintProperty(layer, 'text-color', '#B4C1B9');
     map.setPaintProperty(layer, 'text-halo-color', '#31393a');
   } else {
     map.setPaintProperty(layer, 'text-color', '#000');
@@ -54,7 +54,7 @@ function locationClicked(event) {
       map.setPaintProperty($(o).data('layer'), 'text-halo-color', '#fff');
     });
     $section.addClass('selected').find('.location-detail').show();
-    map.setPaintProperty(layer, 'text-color', '#818e86');
+    map.setPaintProperty(layer, 'text-color', '#B4C1B9');
     map.setPaintProperty(layer, 'text-halo-color', '#31393a');
     map.flyTo({
       center: [parseFloat($section.data('y')), parseFloat($section.data('x'))],
