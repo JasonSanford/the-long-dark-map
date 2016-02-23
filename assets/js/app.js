@@ -12,10 +12,66 @@ var map = new mapboxgl.Map({
   maxZoom: 18
 });
 
+var highlightedMapLayer;
+
 setTimeout(goToFullView, 1000);
 
 function goToFullView() {
   map.fitBounds([[-0.001343, -0.001976], [0.016241, 0.015520]]);
+}
+
+function highlightMapLayer(layer) {
+  if (highlightedMapLayer === layer) {
+    highlightedMapLayer = null;
+    unhighlightMapLayer(layer);
+  } else {
+    unhighlightAllMapLayers();
+    map.setPaintProperty(layer, 'text-color', '#B4C1B9');
+    map.setPaintProperty(layer, 'text-halo-color', '#31393a');
+    highlightedMapLayer = layer;
+  }
+}
+
+function unhighlightAllMapLayers() {
+  selectableLayers.forEach(function (layer) {
+    unhighlightMapLayer(layer);
+  });
+}
+
+function unhighlightMapLayer(layer) {
+  map.setPaintProperty(layer, 'text-color', '#000');
+  map.setPaintProperty(layer, 'text-halo-color', '#fff');
+}
+
+function highlightListItem(layerOrSection) {
+  var $section;
+
+  if (layerOrSection instanceof $) {
+    $section = layerOrSection;
+  } else {
+    $('.location').each(function (i, o) {
+      if ($(this).data('layer') === layerOrSection) {
+        $section = $(this);
+        return false;
+      }
+    });
+  }
+
+  if ($section.hasClass('selected')) {
+    unHighlightListItem($section);
+  } else {
+    unHighlightAllListItems();
+    $section.addClass('selected').find('.location-detail').show();
+    $section[0].scrollIntoView();
+  }
+}
+
+function unHighlightListItem($section) {
+  $section.removeClass('selected').find('.location-detail').hide();
+}
+
+function unHighlightAllListItems() {
+  $('.location').removeClass('selected').find('.location-detail').hide();
 }
 
 function locationHovered(event) {
@@ -23,19 +79,6 @@ function locationHovered(event) {
   var layer = $section.data('layer');
 
   $section[event.type === 'mouseenter' ? 'addClass' : 'removeClass']('hovered');
-
-  $section.siblings('.location').each(function (i, o) {
-    map.setPaintProperty($(o).data('layer'), 'text-color', '#000');
-    map.setPaintProperty($(o).data('layer'), 'text-halo-color', '#fff');
-  });
-
-  if (event.type === 'mouseenter') {
-    map.setPaintProperty(layer, 'text-color', '#B4C1B9');
-    map.setPaintProperty(layer, 'text-halo-color', '#31393a');
-  } else {
-    map.setPaintProperty(layer, 'text-color', '#000');
-    map.setPaintProperty(layer, 'text-halo-color', '#fff');
-  }
 }
 
 function locationClicked(event) {
@@ -43,19 +86,13 @@ function locationClicked(event) {
   var layer = $section.data('layer');
 
   if ($section.hasClass('selected')) {
-    $section.removeClass('selected').find('.location-detail').hide();
-    map.setPaintProperty(layer, 'text-color', '#000');
-    map.setPaintProperty(layer, 'text-halo-color', '#fff');
+    highlightedMapLayer = null;
+    unhighlightMapLayer(layer);
+    unHighlightListItem($section);
     goToFullView();
   } else {
-    $section.siblings('.location').each(function (i, o) {
-      $(o).removeClass('selected').find('.location-detail').hide();
-      map.setPaintProperty($(o).data('layer'), 'text-color', '#000');
-      map.setPaintProperty($(o).data('layer'), 'text-halo-color', '#fff');
-    });
-    $section.addClass('selected').find('.location-detail').show();
-    map.setPaintProperty(layer, 'text-color', '#B4C1B9');
-    map.setPaintProperty(layer, 'text-halo-color', '#31393a');
+    highlightMapLayer(layer);
+    highlightListItem($section);
     map.flyTo({
       center: [parseFloat($section.data('y')), parseFloat($section.data('x'))],
       zoom: 16
@@ -69,3 +106,24 @@ $('.location').hover(
 );
 
 $('.location').on('click', locationClicked);
+
+var selectableLayers = [];
+$('.location').each(function () {
+  selectableLayers.push($(this).data('layer'));
+});
+
+map.on('click', function (e) {
+  map.featuresAt(e.point, {layer: selectableLayers, radius: 1, includeGeometry: true}, function (err, features) {
+    if (err) throw err;
+    if (features.length > 0) {
+      var feature = features[0];
+      highlightMapLayer(feature.properties.name);
+      highlightListItem(feature.properties.name);
+      map.flyTo({center: feature.geometry.coordinates, zoom: 16});
+    } else {
+      highlightedMapLayer = null;
+      unhighlightAllMapLayers();
+      unHighlightAllListItems();
+    }
+  });
+});
