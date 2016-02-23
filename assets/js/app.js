@@ -20,6 +20,18 @@ function goToFullView() {
   map.fitBounds([[-0.001343, -0.001976], [0.016241, 0.015520]]);
 }
 
+function isScrolledIntoView($elem) {
+  var $window = $(window);
+
+  var docViewTop = $window.scrollTop();
+  var docViewBottom = docViewTop + $window.height();
+
+  var elemTop = $elem.offset().top;
+  var elemBottom = elemTop + $elem.height();
+
+  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
 function highlightMapLayer(layer) {
   if (highlightedMapLayer === layer) {
     highlightedMapLayer = null;
@@ -62,7 +74,9 @@ function highlightListItem(layerOrSection) {
   } else {
     unHighlightAllListItems();
     $section.addClass('selected').find('.location-detail').show();
-    $section[0].scrollIntoView();
+    if (!isScrolledIntoView($section)) {
+      $section[0].scrollIntoView();
+    }
   }
 }
 
