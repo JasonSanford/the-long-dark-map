@@ -1,15 +1,16 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiamNzYW5mb3JkIiwiYSI6ImNrZG1kdnU5NzE3bG4yenBkbzU5bDQ2NXMifQ.IMquilPKSANQDaSzf3fjcg';
+mapboxgl.accessToken =
+  "pk.eyJ1IjoiamNzYW5mb3JkIiwiYSI6ImNsd3cxbHBmNDBwM2UyanB6eWpnZDh6ZW0ifQ.0S3VdE166GzJKJX34DaK-g";
 
-var initialPosition = [0.00794800, 0.00677284];
+var initialPosition = [0.007948, 0.00677284];
 var initialZoom = 15;
 
 var map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/jcsanford/cijna760h00id93ly3eqhr7ah',
+  container: "map",
+  style: "mapbox://styles/jcsanford/cijna760h00id93ly3eqhr7ah",
   center: initialPosition,
   zoom: initialZoom - 3,
   minZoom: 12,
-  maxZoom: 18
+  maxZoom: 18,
 });
 
 var highlightedMapLayer;
@@ -17,7 +18,10 @@ var highlightedMapLayer;
 setTimeout(goToFullView, 1000);
 
 function goToFullView() {
-  map.fitBounds([[-0.001343, -0.001976], [0.016241, 0.015520]]);
+  map.fitBounds([
+    [-0.001343, -0.001976],
+    [0.016241, 0.01552],
+  ]);
 }
 
 function isScrolledIntoView($elem) {
@@ -29,7 +33,7 @@ function isScrolledIntoView($elem) {
   var elemTop = $elem.offset().top;
   var elemBottom = elemTop + $elem.height();
 
-  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+  return elemBottom <= docViewBottom && elemTop >= docViewTop;
 }
 
 function highlightMapLayer(layer) {
@@ -38,8 +42,8 @@ function highlightMapLayer(layer) {
     unhighlightMapLayer(layer);
   } else {
     unhighlightAllMapLayers();
-    map.setPaintProperty(layer, 'text-color', '#B4C1B9');
-    map.setPaintProperty(layer, 'text-halo-color', '#31393a');
+    map.setPaintProperty(layer, "text-color", "#B4C1B9");
+    map.setPaintProperty(layer, "text-halo-color", "#31393a");
     highlightedMapLayer = layer;
   }
 }
@@ -51,8 +55,8 @@ function unhighlightAllMapLayers() {
 }
 
 function unhighlightMapLayer(layer) {
-  map.setPaintProperty(layer, 'text-color', '#000');
-  map.setPaintProperty(layer, 'text-halo-color', '#fff');
+  map.setPaintProperty(layer, "text-color", "#000");
+  map.setPaintProperty(layer, "text-halo-color", "#fff");
 }
 
 function highlightListItem(layerOrSection) {
@@ -61,19 +65,19 @@ function highlightListItem(layerOrSection) {
   if (layerOrSection instanceof $) {
     $section = layerOrSection;
   } else {
-    $('.location').each(function (i, o) {
-      if ($(this).data('layer') === layerOrSection) {
+    $(".location").each(function (i, o) {
+      if ($(this).data("layer") === layerOrSection) {
         $section = $(this);
         return false;
       }
     });
   }
 
-  if ($section.hasClass('selected')) {
+  if ($section.hasClass("selected")) {
     unHighlightListItem($section);
   } else {
     unHighlightAllListItems();
-    $section.addClass('selected').find('.location-detail').show();
+    $section.addClass("selected").find(".location-detail").show();
     if (!isScrolledIntoView($section)) {
       $section[0].scrollIntoView();
     }
@@ -81,25 +85,25 @@ function highlightListItem(layerOrSection) {
 }
 
 function unHighlightListItem($section) {
-  $section.removeClass('selected').find('.location-detail').hide();
+  $section.removeClass("selected").find(".location-detail").hide();
 }
 
 function unHighlightAllListItems() {
-  $('.location').removeClass('selected').find('.location-detail').hide();
+  $(".location").removeClass("selected").find(".location-detail").hide();
 }
 
 function locationHovered(event) {
-  var $section = $(event.target).closest('.location');
-  var layer = $section.data('layer');
+  var $section = $(event.target).closest(".location");
+  var layer = $section.data("layer");
 
-  $section[event.type === 'mouseenter' ? 'addClass' : 'removeClass']('hovered');
+  $section[event.type === "mouseenter" ? "addClass" : "removeClass"]("hovered");
 }
 
 function locationClicked(event) {
-  var $section = $(event.target).closest('.location');
-  var layer = $section.data('layer');
+  var $section = $(event.target).closest(".location");
+  var layer = $section.data("layer");
 
-  if ($section.hasClass('selected')) {
+  if ($section.hasClass("selected")) {
     highlightedMapLayer = null;
     unhighlightMapLayer(layer);
     unHighlightListItem($section);
@@ -108,36 +112,37 @@ function locationClicked(event) {
     highlightMapLayer(layer);
     highlightListItem($section);
     map.flyTo({
-      center: [parseFloat($section.data('y')), parseFloat($section.data('x'))],
-      zoom: 16
+      center: [parseFloat($section.data("y")), parseFloat($section.data("x"))],
+      zoom: 16,
     });
   }
 }
 
-$('.location').hover(
-  locationHovered,
-  locationHovered
-);
+$(".location").hover(locationHovered, locationHovered);
 
-$('.location').on('click', locationClicked);
+$(".location").on("click", locationClicked);
 
 var selectableLayers = [];
-$('.location').each(function () {
-  selectableLayers.push($(this).data('layer'));
+$(".location").each(function () {
+  selectableLayers.push($(this).data("layer"));
 });
 
-map.on('click', function (e) {
-  map.featuresAt(e.point, {layer: selectableLayers, radius: 1, includeGeometry: true}, function (err, features) {
-    if (err) throw err;
-    if (features.length > 0) {
-      var feature = features[0];
-      highlightMapLayer(feature.properties.name);
-      highlightListItem(feature.properties.name);
-      map.flyTo({center: feature.geometry.coordinates, zoom: 16});
-    } else {
-      highlightedMapLayer = null;
-      unhighlightAllMapLayers();
-      unHighlightAllListItems();
+map.on("click", function (e) {
+  map.featuresAt(
+    e.point,
+    { layer: selectableLayers, radius: 1, includeGeometry: true },
+    function (err, features) {
+      if (err) throw err;
+      if (features.length > 0) {
+        var feature = features[0];
+        highlightMapLayer(feature.properties.name);
+        highlightListItem(feature.properties.name);
+        map.flyTo({ center: feature.geometry.coordinates, zoom: 16 });
+      } else {
+        highlightedMapLayer = null;
+        unhighlightAllMapLayers();
+        unHighlightAllListItems();
+      }
     }
-  });
+  );
 });
